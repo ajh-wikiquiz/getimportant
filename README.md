@@ -1,11 +1,12 @@
 # getimportant
-Returns important phrases from the text by rank in descending order.
+Returns important phrases from the text by rank in descending order.  
+Uses spacy and pytextrank.
 
-This is intended to be deployed as a web service.
-Try it out here:
-    - GET https://getimportant.herokuapp.com/phrases?text=<some text here>
-    - GET https://getimportant.herokuapp.com/phrases/<some text here>
-    - POST https://getimportant.herokuapp.com/phrases
+This is intended to be deployed as a web service.  
+Try it out here:  
+    - GET https://getimportant.herokuapp.com/phrases?text=%22This%20is%20just%20a%20test.%22  
+    - GET https://getimportant.herokuapp.com/phrases/%22This%20is%20just%20a%20test.%22  
+    - POST https://getimportant.herokuapp.com/phrases  
     - https://getimportant.herokuapp.com/graphql
 
 
