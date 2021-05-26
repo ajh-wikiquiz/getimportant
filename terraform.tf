@@ -20,25 +20,14 @@ variable "app_name" {
 }
 
 provider "heroku" {
-  email = var.HEROKU_EMAIL
+  email   = var.HEROKU_EMAIL
   api_key = var.HEROKU_API_KEY
 }
 
 resource "heroku_app" "app" {
-  name = var.app_name
+  name   = var.app_name
   region = "us"
-  stack = "container"
-}
-
-# Build code & release to the app
-resource "heroku_build" "app" {
-  app = var.app_name
-
-  source {
-    path =  "."
-  }
-
-  depends_on = [heroku_app.app]
+  stack  = "container"
 }
 
 resource "heroku_addon" "cache" {
@@ -59,11 +48,22 @@ resource "heroku_addon_attachment" "cache" {
   depends_on = [heroku_app.app]
 }
 
-resource "heroku_formation" "app" {
+# Build container & release to the app
+resource "heroku_build" "app" {
   app = var.app_name
-  type = "web"
+
+  source {
+    path = "."
+  }
+
+  depends_on = [heroku_addon.cache]
+}
+
+resource "heroku_formation" "app" {
+  app      = var.app_name
+  type     = "web"
   quantity = 1
-  size = "Free"
+  size     = "Free"
 
   depends_on = [heroku_build.app]
 }

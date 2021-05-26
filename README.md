@@ -3,8 +3,8 @@ Returns important phrases from the text by rank in descending order.
 
 This is intended to be deployed as a web service.  
 Try it out here:  
-    - GET https://ajh-getimportant.herokuapp.com/phrases?text=%22This%20is%20just%20a%20test.%22  
-    - GET https://ajh-getimportant.herokuapp.com/phrases/%22This%20is%20just%20a%20test.%22  
+    - GET https://ajh-getimportant.herokuapp.com/phrases?text=This%20is%20just%20a%20test.  
+    - GET https://ajh-getimportant.herokuapp.com/phrases/This%20is%20just%20a%20test.  
     - https://ajh-getimportant.herokuapp.com/graphql
 
 
