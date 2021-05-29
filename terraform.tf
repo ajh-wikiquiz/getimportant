@@ -68,6 +68,13 @@ resource "heroku_formation" "app" {
   depends_on = [heroku_build.app]
 }
 
+resource "heroku_app_feature" "log_runtime_metrics" {
+  app  = var.app_name
+  name = "log-runtime-metrics"
+
+  depends_on = [heroku_formation.app]
+}
+
 output "app_url" {
   value = "https://${var.app_name}.herokuapp.com"
 }
