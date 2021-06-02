@@ -4,10 +4,6 @@ from pydantic import BaseModel
 from typing import Optional, List
 
 
-class Request(BaseModel):
-  text: str
-
-
 class PhrasesGET(BaseModel):
   text: str
   rank: float
