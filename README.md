@@ -7,6 +7,8 @@ Try it out here:
     - GET https://ajh-getimportant.herokuapp.com/phrases/This%20is%20just%20a%20test.  
     - https://ajh-getimportant.herokuapp.com/graphql
 
+See more details here: https://ajh-getimportant.herokuapp.com/docs
+
 
 ### Example input
 ```
